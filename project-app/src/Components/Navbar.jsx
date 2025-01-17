@@ -23,7 +23,6 @@ export default function Navbar() {
                     <ul className="list-item">
                         <li><a href="#">AboutFC</a></li>
                         <li><a href="#">Restaurants</a></li>
-                        <li><a href="#">Products</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">FAQs</a></li>
                     </ul>
