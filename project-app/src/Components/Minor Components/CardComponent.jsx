@@ -1,12 +1,13 @@
 import React from 'react';
-import image1 from '../../Assets/FoodCourt/image1.jpeg';
 import './CardComponent.css';
-function CardComponent() {
+
+
+const CardComponent = ({image = ""}) =>{
   return (
     <>
       <div className="card">
           <div className="card-image">
-          <img src={image1} alt="Food Court Icon" />
+          <img src={image} alt="Food Court Icon" />
           </div>
           <span></span>
           <div className="text-content">

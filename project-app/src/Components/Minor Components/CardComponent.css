@@ -5,8 +5,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 10px #cecece;
-    background-color: #ffffff;
+    box-shadow: 0 0 5px rgb(136, 136, 136);
+    /* background-color: rgba(194, 194, 194, 0.637);  */
+}
+.card:hover{
+    box-shadow: 0 0 10px rgb(136, 136, 136);
+    transition: 0.5s;
+    zoom: 10px;
 }
 
 .card-image {

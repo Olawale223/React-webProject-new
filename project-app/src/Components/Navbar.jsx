@@ -15,10 +15,6 @@ export default function Navbar() {
                 <img src={fc2} alt="Icon 1" /> 
                 </div>
 
-                {/* <div className="icon">
-                    <span className="toggle">☰</span>
-                </div> */}
-
                 <div className="menu">
                     <ul className="list-item">
                         <li><a href="#">AboutFC</a></li>
