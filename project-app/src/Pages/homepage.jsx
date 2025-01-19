@@ -1,11 +1,14 @@
 import React from 'react';
 import ResturantCard from '../Components/ResturantCard';
+import  '../App.css';
+
 function Homepage() {
   return (
-    <div>
+    
+    <div className="Homepage-container">
       <h1>Meet the Restaurants</h1>
       <h4>Handpicked selection of top on-demand delivery restaurants.</h4>
-      <div className="card">
+      <div className="cardbody">
        <ResturantCard />
       </div>
     </div>

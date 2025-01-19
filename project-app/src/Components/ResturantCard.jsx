@@ -10,6 +10,10 @@ function ResturantCard() {
         <CardComponent />
         <CardComponent />
         <CardComponent />
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
     </Layoutone>
   )
 }
