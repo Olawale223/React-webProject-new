@@ -1,8 +1,8 @@
 import React from 'react';
 import './CardComponent.css';
+import textContent from '../Constants';
 
-
-const CardComponent = ({image = ""}) =>{
+const CardComponent = ({image = "", textContent = []}) =>{
   return (
     <>
       <div className="card">
@@ -11,8 +11,8 @@ const CardComponent = ({image = ""}) =>{
           </div>
           <span></span>
           <div className="text-content">
-            <p className="text-head">Sunny Side Club</p>
-            <p className="text-foot">Good food to start your day right!</p>
+            <p className="text-head">{textContent}</p>
+            <p className="text-foot">{textContent}</p>
           </div>
       </div>
     </>
