@@ -68,7 +68,8 @@
     width: 24px;
     height: 24px;
     cursor: pointer;
-    color: #d1d5db;
+    background-color: #d1d5db;
+    border-radius: 50%;
   }
   
   .copyright {
