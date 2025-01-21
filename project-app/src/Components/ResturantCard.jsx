@@ -13,20 +13,20 @@ import textContent from './Constants';
 import CardComponent from './Minor Components/CardComponent'
 
 function ResturantCard() {
+  const images = [image1, image2, image3, image7, image5, image6, image8, image9, image11];
+
   return (
-      
     <Layoutone>
-        <CardComponent image={image1} textContent={textContent[0].textHead}/>
-        <CardComponent image={image2} textContent={textContent[1].textHead}/>
-        <CardComponent image={image3} textContent={textContent[2].textHead}/>
-        <CardComponent image={image7} textContent={textContent[3].textHead}/>
-        <CardComponent image={image5} textContent={textContent[4].textHead}/>
-        <CardComponent image={image6} />
-        <CardComponent image={image8}/>
-        <CardComponent image={image9}/>
-        <CardComponent image={image11}/>
+      {textContent.map((content, index) => (
+        <CardComponent
+          key={index}
+          image={images[index]}
+          textHead={content.textHead}
+          textFoot={content.textFoot}
+        />
+      ))}
     </Layoutone>
-  )
+  );
 }
 
 export default ResturantCard
