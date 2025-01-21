@@ -3,7 +3,10 @@ import  '../App.css';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import foodcourt from '../Assets/FoodCourt/foodcourt.mp4';
-
+import origins from '../Assets/FoodCourt/origins.jpg'
+import delivery from '../Assets/FoodCourt/delivery.jpeg'
+import satisfied from '../Assets/FoodCourt/satisfied.jpeg'
+import operations from '../Assets/FoodCourt/operations.png'
  function Aboutpage() {
   return (
     <>
@@ -14,7 +17,7 @@ import foodcourt from '../Assets/FoodCourt/foodcourt.mp4';
       <header className="hero-section">
         <h1>Creating the Future of Food Delivery Worldwide</h1>
         <div className="hero-video-container">
-          <video autoPlay muted loop src={foodcourt} width={800} height={400} className='hero-image' />
+          <video autoPlay muted loop src={foodcourt} width={800} height={400} className='hero-video' />
         </div>
       </header>
 
@@ -31,13 +34,13 @@ import foodcourt from '../Assets/FoodCourt/foodcourt.mp4';
         <h2>The FoodCourt Journey</h2>
         <div className="journey-grid">
           <div className="journey-item">
-            <image src="" alt="Various food items" width={300} height={200} className="journey-image" />
+            <img src={origins} alt="Various food items" width={300} height={200} className="journey-image" />
             <h3>Origins</h3>
             <p>Best flavors. Begin here.</p>
           </div>
           <div className="journey-item">
-             <image
-              src=""
+             <img
+              src={operations}
               alt="Delivery operations"
               width={300}
               height={200}
@@ -47,12 +50,12 @@ import foodcourt from '../Assets/FoodCourt/foodcourt.mp4';
             <p>Seamless food experience.</p>
           </div>
           <div className="journey-item">
-            <image src="" alt="Food delivery" width={300} height={200} className="journey-image" />
+            <img src={delivery} alt="Food delivery" width={300} height={200} className="journey-image" />
             <h3>Delivering Excellence</h3>
             <p>Quality at your doorstep.</p>
           </div>
           <div className="journey-item">
-            <image src="" alt="Happy customers" width={300} height={200} className="journey-image" />
+            <img src={satisfied} alt="Happy customers" width={300} height={200} className="journey-image" />
             <h3>Satisfied Guests</h3>
             <p>Smiles with every delivery.</p>
           </div>

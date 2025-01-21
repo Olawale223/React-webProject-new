@@ -3,6 +3,7 @@ import './Navbar.css'
 import fc2 from '../Assets/FoodCourt/fc2.png';
 import ap1 from '../Assets/FoodCourt/ap1.png';
 import ps from '../Assets/FoodCourt/ps.png';
+import { Link } from "react-router-dom";
 
 
 export default function Navbar() {
@@ -10,17 +11,18 @@ export default function Navbar() {
     <>
     
         <nav className='nav'>
-            <navcontainer className="navcont">
+            <div className="navcont">
                 <div className="logo">
                 <img src={fc2} alt="Icon 1" /> 
                 </div>
 
                 <div className="menu">
                     <ul className="list-item">
-                        <li><a href="#">AboutFC</a></li>
-                        <li><a href="#">Restaurants</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">FAQs</a></li>
+                       <Link to ="/about"><li><a>AboutFC</a></li></Link>
+                       <Link to ="/"><li><a>Restaurant</a></li></Link>
+                       <Link to ="/"><li><a>Careers</a></li></Link>
+                       <Link to ="/"><li><a>FAQs</a></li></Link>
+                        
                     </ul>
                 </div>
 
@@ -29,7 +31,7 @@ export default function Navbar() {
                     <div className='icone'> <img src={ps} alt="Icon 1" /> </div>
                 
                 </div>
-            </navcontainer>
+            </div>
         </nav>
     
     </>

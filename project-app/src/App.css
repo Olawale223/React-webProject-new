@@ -75,16 +75,19 @@
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+
 }
 
 .hero-video {
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .mission-section {
+  width: 100%;
   text-align: center;
   margin-bottom: 4rem;
-  padding: 2rem;
+  /* padding: 2rem; */
   background-color: #f8f8f8;
   border-radius: 12px;
 }
