@@ -3,6 +3,7 @@ import './Navbar.css'
 import fc2 from '../Assets/FoodCourt/fc2.png';
 import ap1 from '../Assets/FoodCourt/ap1.png';
 import ps from '../Assets/FoodCourt/ps.png';
+// import navcontainer from './NavbarContainer';\.
 
 
 export default function Navbar() {
@@ -10,7 +11,7 @@ export default function Navbar() {
     <>
     
         <nav className='nav'>
-            <navcontainer className="navcont">
+            <div className="navcont">
                 <div className="logo">
                 <img src={fc2} alt="Icon 1" /> 
                 </div>
@@ -29,7 +30,7 @@ export default function Navbar() {
                     <div className='icone'> <img src={ps} alt="Icon 1" /> </div>
                 
                 </div>
-            </navcontainer>
+            </div>
         </nav>
     
     </>

@@ -29,7 +29,14 @@
     height: 100%;
     border-radius: 5px;
 }
-
+.card-content {
+    width: 95%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
 .text-content {
     display: flex;
     flex-direction: column;
