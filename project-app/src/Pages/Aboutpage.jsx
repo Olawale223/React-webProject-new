@@ -1,12 +1,15 @@
 import React from 'react'
 import  '../App.css';
+// import '../Components/SlotComponent.css'
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import RoleCard from '../Components/RoleCard';
 import foodcourt from '../Assets/FoodCourt/foodcourt.mp4';
 import origins from '../Assets/FoodCourt/origins.jpg'
 import delivery from '../Assets/FoodCourt/delivery.jpeg'
 import satisfied from '../Assets/FoodCourt/satisfied.jpeg'
 import operations from '../Assets/FoodCourt/operations.png'
+import building from '../Assets/FoodCourt/building.png'
  function Aboutpage() {
   return (
     <>
@@ -55,7 +58,7 @@ import operations from '../Assets/FoodCourt/operations.png'
             <p>Quality at your doorstep.</p>
           </div>
           <div className="journey-item">
-            <img src={satisfied} alt="Happy customers" width={300} height={200} className="journey-image" />
+            <img src={building} alt="Happy customers" width={300} height={200} className="journey-image" />
             <h3>Satisfied Guests</h3>
             <p>Smiles with every delivery.</p>
           </div>
@@ -64,17 +67,22 @@ import operations from '../Assets/FoodCourt/operations.png'
 
       <section className="team-section">
         <h2>Good Food, Good People</h2>
-        <div className="team-grid">
-            <div>
-              
-              <h3>Team Member</h3>
-              <p>Position</p>
-            </div>
-          
-        </div>
+        <p>Meet the team</p>
+       <RoleCard/>
       </section>
     </div>
 
+    <div className="style-container">
+     <div className="style-hero" style={{ backgroundImage: `url(${satisfied})` }}>
+        <div className="style-overlay">
+          <h1>Join us on our Journey</h1>
+          <p>
+            We're redefining dining experiences and growing fast. If you're passionate about making an impact,{" "}
+            <a href="#contact">share your details</a> to let us know you're interested in joining the team.
+          </p>
+        </div>
+      </div>
+ </div>
     <Footer/>
     </>
   )

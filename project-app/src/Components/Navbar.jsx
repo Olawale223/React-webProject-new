@@ -18,10 +18,10 @@ export default function Navbar() {
 
                 <div className="menu">
                     <ul className="list-item">
-                       <Link to ="/about"><li><a>AboutFC</a></li></Link>
-                       <Link to ="/"><li><a>Restaurant</a></li></Link>
-                       <Link to ="/"><li><a>Careers</a></li></Link>
-                       <Link to ="/"><li><a>FAQs</a></li></Link>
+                       <Link to ="/about" style={{ textDecoration: 'none' }}><li><a>AboutFC</a></li></Link>
+                       <Link to ="/" style={{ textDecoration: 'none' }}><li><a>Restaurant</a></li></Link>
+                       <Link to ="/" style={{ textDecoration: 'none' }}><li><a>Careers</a></li></Link>
+                       <Link to ="/" style={{ textDecoration: 'none' }}><li><a>FAQs</a></li></Link>
                         
                     </ul>
                 </div>
