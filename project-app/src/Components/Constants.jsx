@@ -21,20 +21,20 @@ const textContent = [
     textFoot: "Pizza made with love!"
   },
   {
-    textHead: "Unknown Title",
-    textFoot: "Unknown Description"
+    textHead: "The Burger Joint",
+    textFoot: "Burgers that will make you drool!"
   },
   {
-    textHead: "Unknown Title",
-    textFoot: "Unknown Description"
+    textHead: "The Pasta House",
+    textFoot: "Pasta that will make you happy!"
   },
   {
-    textHead: "Unknown Title",
-    textFoot: "Unknown Description"
+    textHead: "The Salad Bar",
+    textFoot: "Healthy and tasty salads!"
   },
   {
-    textHead: "Unknown Title",
-    textFoot: "Unknown Description"
+    textHead: "The Ice Cream Parlor",
+    textFoot: "Ice cream for every mood!"
   }
 ];
 

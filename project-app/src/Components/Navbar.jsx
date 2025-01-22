@@ -28,7 +28,6 @@ export default function Navbar() {
 
                 <div className="icons">
                     <div className='icone'><img src={ap1} alt="Icon 1" /> </div>
-                    <div className='icone'> <img src={ps} alt="Icon 1" /> </div>
                 
                 </div>
             </div>
