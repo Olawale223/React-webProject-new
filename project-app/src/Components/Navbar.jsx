@@ -27,7 +27,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="icons">
-                    <div className='icone'><img src={ap1} alt="Icon 1" /> </div>
+                    <div className='icone'><img src={ap1} alt="Icon 1" /><Link to="/about"/></div>
                 
                 </div>
             </div>
