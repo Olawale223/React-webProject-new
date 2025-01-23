@@ -19,7 +19,7 @@ export default function Navbar() {
                     <ul className="list-item">
                        <Link to ="/about" style={{ textDecoration: 'none' }}><li><a>AboutFC</a></li></Link>
                        <Link to ="/" style={{ textDecoration: 'none' }}><li><a>Restaurant</a></li></Link>
-                       <Link to ="/" style={{ textDecoration: 'none' }}><li><a>Careers</a></li></Link>
+                       <Link to ="/careers" style={{ textDecoration: 'none' }}><li><a>Careers</a></li></Link>
                        <Link to ="/" style={{ textDecoration: 'none' }}><li><a>FAQs</a></li></Link>
                         
                     </ul>
