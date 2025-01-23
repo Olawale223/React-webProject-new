@@ -10,6 +10,7 @@ import delivery from '../Assets/FoodCourt/delivery.jpeg'
 import satisfied from '../Assets/FoodCourt/satisfied.jpeg'
 import operations from '../Assets/FoodCourt/operations.png'
 import building from '../Assets/FoodCourt/building.png'
+
  function Aboutpage() {
   return (
     <>

@@ -1,8 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import fc2 from '../Assets/FoodCourt/fc2.png';
-import ap1 from '../Assets/FoodCourt/ap1.png';
-import ps from '../Assets/FoodCourt/ps.png';
+import user from '../Assets/FoodCourt/user.svg';
 import { Link } from "react-router-dom";
 
 
@@ -27,7 +26,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="icons">
-                    <div className='icone'><img src={ap1} alt="Icon 1" /><Link to="/about"/></div>
+                    <div className='icone'><Link to ="/access" style={{ textDecoration: 'none' }}><img src={user} alt="Icon 1" /></Link></div>
                 
                 </div>
             </div>
