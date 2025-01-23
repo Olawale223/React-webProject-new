@@ -13,11 +13,9 @@ function App() {
       <Route element={<Auth />}>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<Aboutpage />} />
+        <Route path="/careers" element={<Careerspage />} />
       </Route>
-
-      <Route path="/" element={<Homepage />} />
-      <Route path="/about" element={<Aboutpage />} />
-      <Route path="/careers" element={<Careerspage />} />
+      
     </Routes>
   );
 }

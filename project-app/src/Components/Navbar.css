@@ -78,12 +78,11 @@
     font-size: 18px;
     border-radius: 3px;
     list-style-type: none;
-}
-
-.list-item li a {
     color: #EEE;
     text-decoration: none;
 }
+
+
 
 /* For small screens */
 .icon {

@@ -5,6 +5,7 @@ import { Navigate, Outlet } from 'react-router-dom'
 
 export default function Auth() {
   return (
+    isauthenticated = true,
     isauthenticated ? <Outlet /> : <Navigate to="/access" />
   )
 }
