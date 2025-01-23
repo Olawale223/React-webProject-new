@@ -26,7 +26,7 @@ function RoleCard() {
     const images = [i0005, i0006, i0007, i0008, i0021, i0029, i0023, i0024, i0025, i0038, i0031, i0032, i0033, i0034, i0035];
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 1500,
         slidesToShow: 3,
@@ -42,7 +42,7 @@ function RoleCard() {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
             {
