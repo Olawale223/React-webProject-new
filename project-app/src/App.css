@@ -195,9 +195,9 @@
 }
 
 .career-main {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
 }
 
 .career-hero {
@@ -205,10 +205,13 @@
   align-items: center;
   gap: 4rem;
   padding: 4rem 0;
+  background-color: #000;
 }
 
 .career-heroContent {
   flex: 1;
+  color: #fff;
+  margin-left: 3rem;
 }
 
 .career-heroContent h1 {
@@ -225,11 +228,16 @@
 .career-heroImage img {
   border-radius: 50%;
   object-fit: cover;
+  margin-top: 1rem;
 }
 
 .howWeWork {
   text-align: center;
   padding: 4rem 0;
+  width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  
 }
 
 .howWeWork h2 {
@@ -258,7 +266,8 @@
 }
 
 .imageGrid {
-  width: 100%;
+  width: 1200px;
+  margin: 50px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
