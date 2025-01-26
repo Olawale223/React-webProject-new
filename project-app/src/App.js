@@ -4,6 +4,7 @@ import Aboutpage from "./Pages/Aboutpage";
 import AccessPage from "./Pages/AccessPage";
 import Auth from "./Auth";
 import Careerspage from "./Pages/Careerspage";
+import FAQs from "./Pages/FAQs";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<Aboutpage />} />
         <Route path="/careers" element={<Careerspage />} />
+        <Route path="/faqs" element={<FAQs />} />
       </Route>
       
     </Routes>
