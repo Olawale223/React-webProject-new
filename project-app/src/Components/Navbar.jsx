@@ -20,7 +20,7 @@ export default function Navbar() {
                        <Link to ="/about" style={{ textDecoration: 'none' }}><li>AboutFC</li></Link>
                        <Link to ="/" style={{ textDecoration: 'none' }}><li>Restaurant</li></Link>
                        <Link to ="/careers" style={{ textDecoration: 'none' }}><li>Careers</li></Link>
-                       <Link to ="/" style={{ textDecoration: 'none' }}><li>FAQs</li></Link>
+                       <Link to ="/faqs" style={{ textDecoration: 'none' }}><li>FAQs</li></Link>
                         
                     </ul>
                 </div>

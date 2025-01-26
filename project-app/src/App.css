@@ -325,7 +325,6 @@
   margin-bottom: 1rem;
 }
 
-<<<<<<< HEAD
 .billing-container {
   display: grid;
   grid-template-columns: 1fr 400px;
@@ -465,7 +464,6 @@ textarea:focus {
   text-align: left;
   
 }
-=======
 .faqs-container{
 
   width: 100%;
@@ -491,4 +489,3 @@ textarea:focus {
   font-weight: bold;
   margin-top: 10px;
 }
->>>>>>> be7b128cb5516b161b6038a78bb897dc58cabcab
