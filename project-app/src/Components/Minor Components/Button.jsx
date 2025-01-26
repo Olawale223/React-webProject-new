@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default function Button({ Title, Type,submit}) {
-    
+function Button({ Title, Type, onClick }) {
   return (
-    <div className='button-container'>
-      <button id={Title} type={Type}onClick={(event) => handleChange(submit)}>Login</button>
-    </div>
-  )
+    <button type={Type} onClick={onClick}>
+      {Title}
+    </button>
+  );
 }
+
+export default Button;

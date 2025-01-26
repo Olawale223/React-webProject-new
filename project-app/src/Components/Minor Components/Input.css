@@ -28,12 +28,20 @@
     background: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-#inputcontainer label {
+.login-form{
+    display: flex;
+    align-items: center;
+    justify-content: centerx;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.inputcontainer label {
     font-weight: bold;
     font-size: 1rem;
     color: #a71818;
     margin: 20px;
+    margin-left: 30px;
 }
 .button-container {
     display: flex;
@@ -55,7 +63,7 @@
     transition: background-color 0.3s;
 }
 
-#inputcontainer input {
+.inputcontainer input {
     margin-top: 20px;
     width: 50px;
     background-color: #333;
