@@ -6,6 +6,7 @@ import Auth from "./Auth";
 import Careerspage from "./Pages/Careerspage";
 import { Route, Routes } from "react-router-dom";
 import Checkoutpage from "./Pages/Checkoutpage";
+import Productpage from "./Pages/Productpage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<Aboutpage />} />
         <Route path="/careers" element={<Careerspage />} />
         <Route path="/checkout" element={<Checkoutpage />} />
+        <Route path="/product" element={<Productpage/>} />
       </Route>
       
     </Routes>
