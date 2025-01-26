@@ -1,6 +1,5 @@
 import React from 'react';
 import './CardComponent.css';
-import textContent from '../Constants';
 
 
 function CardComponent({ image, textHead, textFoot }) {

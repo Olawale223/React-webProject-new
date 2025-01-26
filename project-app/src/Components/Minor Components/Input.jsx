@@ -1,26 +1,13 @@
-import React, { useState } from 'react';
-import './Input.css';
+import React from "react";
+import "./Input.css";
 
-export default function Input({ Title, Type }) {
-  const [inputValue, setInputValue] = useState('');
-
-  const handleChange = (value) => {
-    setInputValue(value);
-    TextValidation(value);
-  };
-
-  const TextValidation = (value) => {
-    const input = parseFloat(value);
-    if (isNaN(input)) {
-      alert("Please enter valid values for " + Title);
-      return;
-    }
-  };
-
+function Input({ Title, Type, handleChange }) {
   return (
-    <div id="inputcontainer">
-      <label htmlFor={Title.toLowerCase()}>{Title}:</label>
-      <input id={Title} type={Type} onChange={(event) => handleChange(event.target.value)} />
+    <div className="inputcontainer">
+      <label>{Title}</label>
+      <input type={Type} onChange={(e) => handleChange(e.target.value)} />
     </div>
   );
 }
+
+export default Input;

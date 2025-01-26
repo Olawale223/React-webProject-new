@@ -85,25 +85,20 @@
 
 
 /* For small screens */
-.icon {
+@media (max-width:400px) {
+    
+
+.list-item {
     display: none;
 }
 
-.icon img {
+.icons img {
     height: 40px; 
     display: block; 
 }
-
-.toggle {
-    float: right;
-    margin: 20px;
-    color: #EEE;
-    font-size: 30px;
-    border: 1px solid #EEE;
-    padding: 0px 5px;
-    border-radius: 4px;
-    cursor: pointer;
 }
+
+
 
 /* Responsive adjustments */
 @media (max-width: 1309px) {
