@@ -34,7 +34,6 @@ function RoleCard() {
         initialSlide: 0,
         autoplay: true, // Enable autoplay
         autoplaySpeed: 700, // Set autoplay speed in milliseconds
-        // delay: 2000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -97,18 +96,20 @@ function RoleCard() {
             sliderRef.current.addEventListener('mouseleave', handleMouseLeave);
 
             return () => {
-                sliderRef.current.removeEventListener('mousedown', handleMouseDown);
-                sliderRef.current.removeEventListener('mousemove', handleMouseMove);
-                sliderRef.current.removeEventListener('mouseup', handleMouseUp);
-                sliderRef.current.removeEventListener('mouseleave', handleMouseLeave);
+                if (sliderRef.current) {
+                    sliderRef.current.removeEventListener('mousedown', handleMouseDown);
+                    sliderRef.current.removeEventListener('mousemove', handleMouseMove);
+                    sliderRef.current.removeEventListener('mouseup', handleMouseUp);
+                    sliderRef.current.removeEventListener('mouseleave', handleMouseLeave);
+                }
             };
         }
     }, [isDragging]);
 
     return (
         <Layouttwo>
-            <div className="draggable-container" ref={sliderRef}>
-                <Slider {...settings}>
+            <div className="draggable-container">
+                <Slider {...settings} innerRef={sliderRef}>
                     {roleContent.map((content, index) => (
                         <SlotComponent
                             key={index}

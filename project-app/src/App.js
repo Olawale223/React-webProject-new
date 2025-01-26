@@ -5,6 +5,7 @@ import AccessPage from "./Pages/AccessPage";
 import Auth from "./Auth";
 import Careerspage from "./Pages/Careerspage";
 import { Route, Routes } from "react-router-dom";
+import Checkoutpage from "./Pages/Checkoutpage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<Aboutpage />} />
         <Route path="/careers" element={<Careerspage />} />
+        <Route path="/checkout" element={<Checkoutpage />} />
       </Route>
       
     </Routes>
