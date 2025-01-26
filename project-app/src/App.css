@@ -325,6 +325,7 @@
   margin-bottom: 1rem;
 }
 
+<<<<<<< HEAD
 .billing-container {
   display: grid;
   grid-template-columns: 1fr 400px;
@@ -464,3 +465,30 @@ textarea:focus {
   text-align: left;
   
 }
+=======
+.faqs-container{
+
+  width: 100%;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.faqs-container h1, 
+.faqs-container h4 {
+  margin-bottom: 10px;
+}
+
+.faqs-container h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.faqs-container h4 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+>>>>>>> be7b128cb5516b161b6038a78bb897dc58cabcab
