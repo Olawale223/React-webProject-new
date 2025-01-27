@@ -1,6 +1,7 @@
 import React from 'react'
 import './CardComponent.css'
 
+
 export default function Floatingimage() {
   return (
     <div className='floating-cont'>

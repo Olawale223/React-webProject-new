@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import "./Minor Components/Input.css";
 import Input from "./Minor Components/Input";
 import Button from "./Minor Components/Button";
-import Auth from "../Auth";
-
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+// import { mainAPI } from "../Auth";
+import { isauthenticated } from '../services'
 function LoginPage({ onSwitchToSignup }) {
+  const navigate = useNavigate()
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login status
+  // const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login status
 
   function handleUsername(user) {
     setUsername(user);
@@ -16,20 +20,27 @@ function LoginPage({ onSwitchToSignup }) {
   function handlePassword(pass) {
     setPassword(pass);
   }
+ function notify(param) {
+    toast(param);
+  }
+
+
+  function showTrue() {
+    notify("Login Successful!");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+  }
+
+  function showFalse() {
+    
+  }
 
   async function submit(event) {
     event.preventDefault();
 
-    // Simulate user validation with localStorage
-    const storedUser = localStorage.getItem("user");
-    const storedPass = localStorage.getItem("pass");
-
-    if (storedUser === username && storedPass === password) {
-      setIsLoggedIn(true); // Set login status to true
-      alert("Login Successful");
-    } else {
-      alert("Invalid username or password");
-    }
+    const isLoggedIn = isauthenticated({username: username, password: password});
+    isLoggedIn === true ? showTrue() : notify("Login Failed!")
   }
 
 
@@ -39,7 +50,7 @@ function LoginPage({ onSwitchToSignup }) {
         <form className="login-form">
           <Input Title="Username" Type="text" handleChange={handleUsername} />
           <Input Title="Password" Type="password" handleChange={handlePassword} />
-          <Button Title="Login" Type="button" onClick={submit} />
+          <Button Title="Login" Type="button" onClick={(e) => submit(e)} />
           <li
             onClick={onSwitchToSignup}
             style={{ textDecoration: "none", cursor: "pointer" }}
@@ -48,6 +59,7 @@ function LoginPage({ onSwitchToSignup }) {
           </li>
         </form>
       </div>
+        <ToastContainer />
     </div>
   );
 }

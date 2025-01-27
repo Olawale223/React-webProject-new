@@ -3,6 +3,7 @@ import ResturantCard from '../Components/ResturantCard';
 import  '../App.css';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import Floatingimage from '../Components/Minor Components/Floatingimage';
 
 function Homepage() {
   return (
@@ -14,6 +15,7 @@ function Homepage() {
         <div className="cardbody">
         <ResturantCard />
         </div>
+        <Floatingimage/>
     </div>
     <Footer/>
     </>

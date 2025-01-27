@@ -9,6 +9,8 @@ import { Route, Routes } from "react-router-dom";
 import Checkoutpage from "./Pages/Checkoutpage";
 import Productpage from "./Pages/Productpage";
 
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
     <Routes>

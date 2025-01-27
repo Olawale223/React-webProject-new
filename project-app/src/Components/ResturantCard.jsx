@@ -11,8 +11,10 @@ import image9 from '../Assets/FoodCourt/image9.jpg';
 import image11 from '../Assets/FoodCourt/image11.jpg';
 import textContent from './Constants';
 import CardComponent from './Minor Components/CardComponent'
+import { useNavigate } from 'react-router-dom';
 
 function ResturantCard() {
+  const navigate = useNavigate()
   const images = [image1, image2, image3, image7, image5, image6, image8, image9, image11];
 
   return (
@@ -23,6 +25,11 @@ function ResturantCard() {
           image={images[index]}
           textHead={content.textHead}
           textFoot={content.textFoot}
+          onClick={
+            () => {
+              navigate('/product')
+            }
+          }
         />
       ))}
     </Layoutone>

@@ -1,9 +1,13 @@
-const isauthenticated = () => {
-    var user = localStorage.getItem("user");
-    if (user) {
-        return true;
-    } else {
-        return false;
-    }
-}
- 
+export const isauthenticated = (obj) => {
+
+    var isLoggedin = false
+
+    const storedUser = localStorage.getItem("user");
+    const storedPass = localStorage.getItem("pass");
+
+    if (storedUser === obj.username && storedPass === obj.password) {
+      isLoggedin = true
+    } 
+
+    return isLoggedin
+};

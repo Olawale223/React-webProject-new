@@ -2,9 +2,9 @@ import React from 'react';
 import './CardComponent.css';
 
 
-function CardComponent({ image, textHead, textFoot }) {
+function CardComponent({ image, textHead, textFoot, onClick }) {
   return (
-    <div className="card">
+    <div className="card" onClick={onClick}>
       <div className='card-image'>
       <img src={image} alt={textHead} />
       </div>

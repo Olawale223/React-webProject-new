@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./Minor Components/Input.css";
 import Input from "./Minor Components/Input";
 import Button from "./Minor Components/Button";
-import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import { mainAPI } from "../Auth";
 
 function Signup({ onSwitchToLogin }) {
   const [username, setUsername] = useState("");
@@ -16,29 +17,41 @@ function Signup({ onSwitchToLogin }) {
     setPassword(pass);
   }
 
+  function notify(param) {
+    toast(param);
+  }
+
   async function submit(event) {
     event.preventDefault();
-    const rebody = JSON.stringify({ email: username, password: password });
+    const data = JSON.stringify({ email: username, password: password });
     localStorage.setItem("user", username);
     localStorage.setItem("pass", password);
 
-    const url = "http://102.37.214.37:5001/api/v1/auth/signin";
+    // const url = "http://102.37.214.37:5001/api/v1/auth/";
 
-    const config = {
-      method: "post",
-      maxBodyLength: Infinity,
-      url: url,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: rebody,
-    };
+    // const config = {
+    //   method: "post",
+    //   maxBodyLength: Infinity,
+    //   url: url,
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   data: data,
+    // };
+
+    // www.facebook.com/account/12332
+
+    // baseURL = "www.facebook.com"
+    // entryPoint = "/account/12332/posts"
+    // apiEndpoint = baseURL + entryPoint
 
     try {
-      const response = await axios(config);
-      console.log(response.data);
+      // const response = await mainAPI.post('api/v1/auth/signin', { data });
+      // console.log(response.data);
+      notify("Sign Up Successful!")
     } catch (error) {
-      console.error(error);
+      notify("Sign Up Failed!")
+      // console.error(error);
     }
   }
 
@@ -57,6 +70,8 @@ function Signup({ onSwitchToLogin }) {
           </li>
         </form>
       </div>
+
+      <ToastContainer />
     </div>
   );
 }

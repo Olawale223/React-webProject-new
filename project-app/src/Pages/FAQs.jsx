@@ -5,7 +5,6 @@ import Footer from '../Components/Footer';
 import Faq from '../Components/Minor Components/Faq';
 import SearchBar from '../Components/SearchBar';
 import FaqInfo from '../Components/FaqInfo';
-import Button from '../Components/Minor Components/Button';
 
  function FAQs() {
   return (

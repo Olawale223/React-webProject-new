@@ -24,7 +24,8 @@
 }
 
 .Homepage-container h1, 
-.Homepage-container h4 {
+.Homepage-container h4,
+.Homepage-container h2 {
   margin-bottom: 20px;
 }
 
@@ -36,6 +37,10 @@
 .Homepage-container h4 {
   font-size: 20px;
   font-weight: 400;
+}
+.Homepage-container h2{
+  font-size: 40px;
+  font-weight: 600;
 }
 
 .cardbody {
