@@ -88,7 +88,7 @@
 }
 .floating-cont{
     display: flex;
-    width: 50%;
+    width: 45%;
     height: 30vh;
     margin-top: 10px;
     flex-direction: row;
