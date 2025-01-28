@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import Product from '../Components/Product';
 import  '../App.css';
+import Floatingimage from '../Components/Minor Components/Floatingimage';
 
 export default function Productpage() {
   return (
@@ -14,6 +15,9 @@ export default function Productpage() {
     <div className="cardbody">
     <Product/>
     </div>
+    <h2>Get meal updates from Mama's Kitchen</h2>
+    <h2> on Instagram.</h2>
+    <Floatingimage/>
 </div>
 <Footer/>
 </>

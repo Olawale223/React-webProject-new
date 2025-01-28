@@ -2,7 +2,7 @@ import React from 'react'
 import './CardComponent.css';
 
 
-export default function ProductCard({ image, textHead, textBody, textFoot,onClick }) {
+export default function ProductCard({ image, textHead, textBody, textFoot, onClick }) {
   return (
     <div className="card" onClick={onClick}>
       <div className='card-image'>
