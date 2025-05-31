@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <title>My React App</title>
+    <link rel="stylesheet" href="%PUBLIC_URL%/index.css" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- 👇 React app mounts here -->
+    <div id="root"></div>
+      <script>
+
+        import React from 'react';
+        import ReactDOM from 'react-dom/client';
+        import './index.css';
+        import App from './App';
+        import reportWebVitals from './reportWebVitals';
+        import { BrowserRouter } from 'react-router-dom';
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(
+        <React.StrictMode>
+            <BrowserRouter>
+            <App />
+            </BrowserRouter>
+        </React.StrictMode>
+        );
+
+      </script>
+
+  </body>
+</html>
