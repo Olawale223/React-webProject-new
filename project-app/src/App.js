@@ -8,8 +8,8 @@ import FAQs from "./Pages/FAQs";
 import { Route, Routes } from "react-router-dom";
 import Checkoutpage from "./Pages/Checkoutpage";
 import Productpage from "./Pages/Productpage";
-
 import 'react-toastify/dist/ReactToastify.css';
+import Resturantpage from "./Pages/Resturantpage";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
       <Route path="/access" element={<AccessPage />} />
       <Route element={<Auth />}>
         <Route path="/" element={<Homepage />} />
+        <Route path="/resturant" element={<Resturantpage />} />
         <Route path="/about" element={<Aboutpage />} />
         <Route path="/careers" element={<Careerspage />} />
         <Route path="/checkout" element={<Checkoutpage />} />
