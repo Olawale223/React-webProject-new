@@ -271,7 +271,7 @@
 }
 
 .imageGrid {
-  width: 1200px;
+  width: 10px;
   margin: 50px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -575,5 +575,67 @@ textarea:focus {
   }
   .card-content {
     padding: 15px; /* Adjust card content padding for tablets */
+  }
+}
+
+
+/* Make all horizontal layouts vertical on tablet/mobile */
+@media (max-width: 1024px) {
+  .career-hero {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+  .workGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .imageGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .gridImage-1 img, .gridImage-2 img, .gridImage-3 img, .gridImage-4 img {
+    height: 140px;
+  }
+}
+@media (max-width: 600px) {
+  .career-title {
+    font-size: 1.3rem;
+  }
+  .career-subtitle {
+    font-size: 0.95rem;
+  }
+  .career-hero {
+    padding: 1rem 0.2rem 0.5rem 0.2rem;
+  }
+  .career-hero-img {
+    width: 120px;
+    border-radius: 12px;
+  }
+  .howWeWork {
+    padding: 0 0.2rem 1rem 0.2rem;
+  }
+  .howWeWork-title {
+    font-size: 1.1rem;
+  }
+  .howWeWork-desc {
+    font-size: 0.85rem;
+  }
+  .workGrid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .imageGrid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    padding: 0 0.2rem;
+  }
+  .gridImage-1, .gridImage-2, .gridImage-3, .gridImage-4 {
+    min-height: 90px;
+    border-radius: 10px;
+  }
+  .gridImage-1 img, .gridImage-2 img, .gridImage-3 img, .gridImage-4 img {
+    height: 90px;
+    border-radius: 10px;
   }
 }
