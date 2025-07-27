@@ -193,10 +193,14 @@
     margin-top: 90%;
 }
 
+<<<<<<< HEAD
  
 
 /* Tablets (up to 1024px) */
 @media screen and (max-width: 1024px) {
+=======
+@media (max-width: 1024px) {
+>>>>>>> ef56d21d992d1f9332cc30a9234710f5a7a72256
   .card, .Product-card {
     width: 90vw;
     max-width: 320px;
@@ -212,9 +216,13 @@
     font-size: 1.2rem;
   }
 }
+<<<<<<< HEAD
 
 /* Mobile devices (up to 768px) */
 @media screen and (max-width: 768px) {
+=======
+@media (max-width: 768px) {
+>>>>>>> ef56d21d992d1f9332cc30a9234710f5a7a72256
   .card, .Product-card {
     width: 98vw;
     max-width: 98vw;
@@ -231,9 +239,13 @@
     font-size: 1rem;
   }
 }
+<<<<<<< HEAD
 
 /* Small devices (up to 480px) */
 @media screen and (max-width: 480px) {
+=======
+@media (max-width: 480px) {
+>>>>>>> ef56d21d992d1f9332cc30a9234710f5a7a72256
   .card, .Product-card {
     width: 100vw;
     max-width: 100vw;
@@ -251,6 +263,7 @@
   }
 }
 
+<<<<<<< HEAD
 /* Fix: Remove all floating-cont responsive rules from CardComponent.css to avoid conflicts */
 @media screen and (max-width: 1024px),
        screen and (max-width: 768px),
@@ -266,3 +279,5 @@
     border-radius: 60px !important;
   }
 }
+=======
+>>>>>>> ef56d21d992d1f9332cc30a9234710f5a7a72256

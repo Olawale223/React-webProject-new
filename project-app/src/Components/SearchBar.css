@@ -17,7 +17,10 @@
     text-align: center;
 }
 
+<<<<<<< HEAD
 /* Responsive Styles */
+=======
+>>>>>>> ef56d21d992d1f9332cc30a9234710f5a7a72256
 @media (max-width: 1024px) {
   #search {
     width: 20rem;
