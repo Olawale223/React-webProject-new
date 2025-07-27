@@ -17,11 +17,19 @@ code {
     font-size: 1rem;
   }
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> ef56d21d992d1f9332cc30a9234710f5a7a72256
 @media (max-width: 768px) {
   body {
     font-size: 0.95rem;
   }
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> ef56d21d992d1f9332cc30a9234710f5a7a72256
 @media (max-width: 480px) {
   body {
     font-size: 0.9rem;

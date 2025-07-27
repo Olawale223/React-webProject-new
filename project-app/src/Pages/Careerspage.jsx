@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import '../Pages/PageStyles.css';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import chef from '../Assets/FoodCourt/chef.jpg';
@@ -17,11 +18,11 @@ const CareerPage = () => {
   return (
     <>
       <Navbar />
-      <main className="career-main">
+      <main className="page-container career-main">
         <section className="career-hero">
           <div className="career-heroContent">
-            <h1>Choose your forte</h1>
-            <p>
+            <h1 className="page-title">Choose your forte</h1>
+            <p className="page-subtitle">
               Become a part of something extraordinary. A workplace where you can discover yourself in a distinctly
               unique food ecosystem that's built on innovation and collaboration.
             </p>
@@ -32,21 +33,18 @@ const CareerPage = () => {
               alt="Team collaboration"
               width={400}
               height={400}
+              style={{ maxWidth: '90vw', height: 'auto', borderRadius: 24 }}
             />
           </div>
         </section>
 
         <section className="howWeWork">
-          <h2>How we work</h2>
-          <p>A food tech ecosystem that thrives when innovation meets collaboration.</p>
-
+          <h2 className="howWeWork-title">How we work</h2>
+          <p className="page-subtitle howWeWork-desc">A food tech ecosystem that thrives when innovation meets collaboration.</p>
           <div className="workGrid">
             <div className="workItem">
               <div className="iconn">
-              <img
-              src={monitor}
-              alt="Workplace scene 5"
-              />
+                <img src={monitor} alt="Workplace scene 5" />
               </div>
               <h3>Security & Protection</h3>
               <p>
@@ -55,33 +53,30 @@ const CareerPage = () => {
             </div>
             <div className="workItem">
               <div className="iconn">
-              <img
-              src={people}
-              alt="Workplace scene 6"
-             />
+                <img src={people} alt="Workplace scene 6" />
               </div>
-              <h3>Actual work - No bureaucracy</h3>
-              <p>Work that matters in a charged part of a growing ecosystem with minimal bureaucracy.</p>
+              <h3>Teamwork</h3>
+              <p>
+                Collaboration is at our core. We believe in the power of working together to achieve great things.
+              </p>
             </div>
             <div className="workItem">
               <div className="iconn">
-              <img
-              src={scale}
-              alt="Workplace scene 7"
-             />
+                <img src={scale} alt="Workplace scene 7" />
               </div>
-              <h3>Everyone is a contributor</h3>
-              <p>All voices are valid and everyone plays a part in our success story, regardless of experience.</p>
+              <h3>Balance</h3>
+              <p>
+                We support a healthy work-life balance for all our team members.
+              </p>
             </div>
             <div className="workItem">
               <div className="iconn">
-              <img
-              src={medal}
-              alt="Workplace scene 7"
-             />
+                <img src={medal} alt="Workplace scene 8" />
               </div>
-              <h3>Defined reward system</h3>
-              <p>We recognize the importance of appreciation and ensure rewards match productivity.</p>
+              <h3>Recognition</h3>
+              <p>
+                We celebrate achievements and recognize the contributions of every individual.
+              </p>
             </div>
           </div>
         </section>
