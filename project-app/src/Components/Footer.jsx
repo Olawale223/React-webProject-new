@@ -12,7 +12,7 @@ function Footer() {
       <div className="container">
         <div className="footer-grid">
           {/* Logo and Contact Section */}
-          <div>
+          <div className="hide-mobile">
             <div className="logo">FOODCOURT</div>
             <div className="contact-section">
               <h3 className="section-title">Contact</h3>
@@ -38,7 +38,7 @@ function Footer() {
           </div>
 
           {/* Locations */}
-          <div>
+          <div className="hide-mobile">
             <h3 className="section-title">Locations</h3>
             <ul className="link-list">
               <li>Sunny Side Club</li>

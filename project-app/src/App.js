@@ -10,22 +10,25 @@ import Checkoutpage from "./Pages/Checkoutpage";
 import Productpage from "./Pages/Productpage";
 import 'react-toastify/dist/ReactToastify.css';
 import Resturantpage from "./Pages/Resturantpage";
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/access" element={<AccessPage />} />
-      <Route element={<Auth />}>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/resturant" element={<Resturantpage />} />
-        <Route path="/about" element={<Aboutpage />} />
-        <Route path="/careers" element={<Careerspage />} />
-        <Route path="/checkout" element={<Checkoutpage />} />
-        <Route path="/product" element={<Productpage/>} />
-        <Route path="/faqs" element={<FAQs />} />
-      </Route>
-      
-    </Routes>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/access" element={<AccessPage />} />
+        <Route element={<Auth />}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/resturant" element={<Resturantpage />} />
+          <Route path="/about" element={<Aboutpage />} />
+          <Route path="/careers" element={<Careerspage />} />
+          <Route path="/checkout" element={<Checkoutpage />} />
+          <Route path="/product" element={<Productpage/>} />
+          <Route path="/faqs" element={<FAQs />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
