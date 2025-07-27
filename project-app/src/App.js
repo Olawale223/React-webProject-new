@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Resturantpage from "./Pages/Resturantpage";
 
 function App() {
+
   return (
     <Routes>
       <Route path="/access" element={<AccessPage />} />
