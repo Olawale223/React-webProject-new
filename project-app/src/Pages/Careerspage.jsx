@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import '../Pages/PageStyles.css';
+import '../Pages/Careerspage.css';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import chef from '../Assets/FoodCourt/chef.jpg';
@@ -17,7 +18,7 @@ import FormComponent from '../Components/Minor Components/FormComonent';
 const CareerPage = () => {
   return (
     <>
-      <Navbar />
+      
       <main className="page-container career-main">
         <section className="career-hero">
           <div className="career-heroContent">

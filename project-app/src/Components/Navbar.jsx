@@ -4,9 +4,12 @@ import fc2 from '../Assets/FoodCourt/fc2.png';
 import user from '../Assets/FoodCourt/user.svg';
 import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from './CartContext';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cart } = useCart();
 
   // Close menu on route change or window resize (for responsiveness)
   useEffect(() => {
@@ -63,11 +66,40 @@ export default function Navbar() {
         </div>
         {/* User icon */}
         <div className="icons">
+          <Link to="/cart" style={{ textDecoration: 'none', marginRight: '1.2rem', position: 'relative' }}>
+            <FaShoppingCart style={{ fontSize: 22, color: '#00bcd4' }} />
+            {/* Cart count badge */}
+            <CartCountBadge count={cart.length} />
+          </Link>
           <Link to="/access" style={{ textDecoration: 'none' }}>
             <img src={user} alt="User Icon" />
           </Link>
         </div>
       </div>
     </nav>
+  );
+}
+
+// CartCountBadge component
+function CartCountBadge({ count }) {
+  if (!count) return null;
+  return (
+    <span style={{
+      position: 'absolute',
+      top: -6,
+      right: 2,
+      background: '#e53935',
+      color: '#fff',
+      borderRadius: '50%',
+      fontSize: 12,
+      minWidth: 18,
+      height: 18,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '0 5px',
+      fontWeight: 700,
+      zIndex: 2
+    }}>{count}</span>
   );
 }

@@ -1,4 +1,3 @@
-
 const textContent = [
   {
     textHead: "Sunny Side Club",
@@ -39,4 +38,3 @@ const textContent = [
 ];
 
 export default textContent;
-

@@ -14,7 +14,7 @@ import building from '../Assets/FoodCourt/building.png'
  function Aboutpage() {
   return (
     <>
-    <Navbar/>
+    
 
 
     <div className="about-container">

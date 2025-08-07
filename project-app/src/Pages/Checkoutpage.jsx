@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../App.css'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
+import { useCart } from '../Components/CartContext';
 
 export default function Checkoutpage() {
     const [formData, setFormData] = useState({
@@ -17,6 +18,10 @@ export default function Checkoutpage() {
         additionalInfo: "",
         paymentMethod: "", // Initialize paymentMethod to an empty string
     })
+    const { cart } = useCart();
+    const deliveryFee = 500;
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const grandTotal = total + deliveryFee;
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -26,9 +31,30 @@ export default function Checkoutpage() {
         }))
     }
 
+    const handlePaystackPayment = () => {
+        if (!window.PaystackPop) {
+            alert('Paystack SDK not loaded');
+            return;
+        }
+        const handler = window.PaystackPop.setup({
+            key: 'pk_test_8a5c08278cf9d977df421fc71f85ac9f496a484f',
+            email: formData.email || 'chideraiwuchukwu@gmail.com',
+            amount: grandTotal * 100,
+            currency: 'NGN',
+            callback: function(response) {
+                alert('Payment complete! Reference: ' + response.reference);
+                // Optionally clear cart here
+            },
+            onClose: function() {
+                alert('Transaction was not completed.');
+            }
+        });
+        handler.openIframe();
+    };
+
     return (
         <>
-            <Navbar />
+            
             <div className="billing-container">
                 <div className="billing-form-section">
                     <h1>Billing details</h1>
@@ -155,13 +181,23 @@ export default function Checkoutpage() {
                         <h2>Product</h2>
                         <h2>Subtotal</h2>
                     </div>
+                    {cart.map(item => (
+                      <div className="summary-item" key={item.id}>
+                        <span>{item.textHead} x {item.quantity}</span>
+                        <span>₦{item.price * item.quantity}</span>
+                      </div>
+                    ))}
                     <div className="summary-item">
                         <span>Subtotal</span>
-                        <span>₦50,000.00</span>
+                        <span>₦{total}</span>
+                    </div>
+                    <div className="summary-item">
+                        <span>Delivery</span>
+                        <span>₦{deliveryFee}</span>
                     </div>
                     <div className="summary-item">
                         <span>Total</span>
-                        <span className="total-amount">₦50,000.00</span>
+                        <span className="total-amount">₦{grandTotal}</span>
                     </div>
                     <div className="payment-options">
                         <h2>Payment Method</h2>
@@ -222,6 +258,9 @@ export default function Checkoutpage() {
                             </p>
                         </div>
                     </div>
+                    <button type="button" className="submit-button" onClick={handlePaystackPayment}>
+                        Pay Now
+                    </button>
                 </div>
             </div>
             <Footer />

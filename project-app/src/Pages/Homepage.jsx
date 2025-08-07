@@ -8,7 +8,7 @@ import DownloadPrompt from '../Components/Minor Components/DownloadPrompts';
 function Homepage() {
   return (
     <>
-    <Navbar/>
+    
       <div className="Homepage-container">
         <h1>welcome to FoodCourt</h1>
         <h4>Chef Prepared meals, at the click of a button</h4>

@@ -9,7 +9,7 @@ import FaqInfo from '../Components/FaqInfo';
  function FAQs() {
   return (
     <>
-      <Navbar/>
+      
       <div className="faqs-container">
 
       <h1>How can we help?</h1>

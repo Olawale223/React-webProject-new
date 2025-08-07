@@ -8,15 +8,20 @@ import FAQs from "./Pages/FAQs";
 import { Route, Routes } from "react-router-dom";
 import Checkoutpage from "./Pages/Checkoutpage";
 import Productpage from "./Pages/Productpage";
-import 'react-toastify/dist/ReactToastify.css';
 import Resturantpage from "./Pages/Resturantpage";
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './Components/Navbar';
+import FoodCourt from "./Components/FoodCourt";
+import CartPage from "./Pages/CartPage";
+import { CartProvider } from './Components/CartContext';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
   return (
-    <>
+    <CartProvider>
       <Navbar />
+      <ToastContainer />
       <Routes>
         <Route path="/access" element={<AccessPage />} />
         <Route element={<Auth />}>
@@ -27,9 +32,10 @@ function App() {
           <Route path="/checkout" element={<Checkoutpage />} />
           <Route path="/product" element={<Productpage/>} />
           <Route path="/faqs" element={<FAQs />} />
+          <Route path="/cart" element={<CartPage />} />
         </Route>
       </Routes>
-    </>
+    </CartProvider>
   );
 }
 

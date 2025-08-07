@@ -8,7 +8,7 @@ import Floatingimage from '../Components/Minor Components/Floatingimage';
 export default function Productpage() {
   return (
  <>
-<Navbar/>
+
   <div className="Homepage-container">
     <h2>Get mouth-watering dishes </h2>
     <h2>from Sunny Side Club.</h2>
