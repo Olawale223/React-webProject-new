@@ -19,11 +19,6 @@ const userSchema = new mongoose.Schema({
         minlength:[6, "Password must be at least 6 characters"],
     },
 
-    role:{
-        type:String,
-        enum: ["member", "admin"],
-        default: "member"
-    },
 },{
     // created at and updated at timestamps
     timestamps:true

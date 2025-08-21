@@ -37,17 +37,17 @@ const storeRefreshToken = async (userId, refreshToken) => {
 
 const setCookies = (res, accessToken, refreshToken) => {
   res.cookie("accessToken", accessToken, {
-    httpOnly: true, // Prevent client-side access
-    sameSite: "none", // Allows cross-site cookies (needed if frontend is on a different domain)
-    secure: process.env.NODE_ENV === "production", // Only HTTPS in production
-    maxAge: 15 * 60 * 1000, // 15 minutes in milliseconds
+    httpOnly: true, 
+    sameSite: "none", 
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 15 * 60 * 1000, 
   });
 
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
     sameSite: "none",
     secure: process.env.NODE_ENV === "production",
-    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    maxAge: 7 * 24 * 60 * 60 * 1000, 
   });
 };
 
@@ -59,7 +59,7 @@ export const signup = async (req, res) => {
     if (userExists) {
       return res.status(400).json({ message: "User already exists" });
     }
-    const user = await User.create({ email, password, name });
+   const user = await User.create({ email, password, name });
 
     const { accessToken, refreshToken } = generateTokens(user._id);
     await storeRefreshToken(user._id, refreshToken);
