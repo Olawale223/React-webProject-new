@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
 import paymentRoutes from "./routes/payment.routes.js";
@@ -21,5 +22,9 @@ app.listen(PORT, () => {
   connectDB();
 });
 
-
-
+app.use(
+  cors({
+    origin: "http://localhost:5174", // Your frontend URL
+    credentials: true,
+  })
+);
