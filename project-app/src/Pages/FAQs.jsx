@@ -1,7 +1,5 @@
 import React from 'react'
 import  '../App.css';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
 import Faq from '../Components/Minor Components/Faq';
 import SearchBar from '../Components/SearchBar';
 import FaqInfo from '../Components/FaqInfo';
@@ -23,7 +21,6 @@ import FaqInfo from '../Components/FaqInfo';
       </h4>
       <FaqInfo/>
       </div>
-      <Footer/>
 
     </>
   )

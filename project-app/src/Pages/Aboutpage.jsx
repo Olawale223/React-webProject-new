@@ -1,8 +1,6 @@
 import React from 'react'
 import  '../App.css';
 // import '../Components/SlotComponent.css'
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
 import RoleCard from '../Components/RoleCard';
 import foodcourt from '../Assets/FoodCourt/foodcourt.mp4';
 import origins from '../Assets/FoodCourt/origins.jpg'
@@ -84,7 +82,6 @@ import building from '../Assets/FoodCourt/building.png'
         </div>
       </div>
  </div>
-    <Footer/>
     </>
   )
 }

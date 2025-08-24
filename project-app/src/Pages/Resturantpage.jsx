@@ -1,7 +1,6 @@
 import ResturantCard from '../Components/ResturantCard';
 import  '../App.css';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+
 import Floatingimage from '../Components/Minor Components/Floatingimage';
 
  function Resturantpage() {
@@ -16,7 +15,6 @@ import Floatingimage from '../Components/Minor Components/Floatingimage';
         </div>
         <Floatingimage/>
     </div>
-    <Footer/>
     </>
   )
 }

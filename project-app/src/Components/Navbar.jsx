@@ -35,7 +35,8 @@ export default function Navbar() {
         {/* Logo */}
         <div className="logo">
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <img src={fc2} alt="Logo" />
+            {/* <img src={fc2} alt="Logo" /> */}
+            <h1 style={{fontSize:28}}>FOODCOURT</h1>
           </Link>
         </div>
         {/* Hamburger icon (FaBars) */}
@@ -67,7 +68,7 @@ export default function Navbar() {
         {/* User icon */}
         <div className="icons">
           <Link to="/cart" style={{ textDecoration: 'none', marginRight: '1.2rem', position: 'relative' }}>
-            <FaShoppingCart style={{ fontSize: 22, color: '#00bcd4' }} />
+            <FaShoppingCart style={{ fontSize: 22, color: '#ffffffff' }} />
             {/* Cart count badge */}
             <CartCountBadge count={cart.length} />
           </Link>

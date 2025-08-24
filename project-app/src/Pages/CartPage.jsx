@@ -1,7 +1,6 @@
 import React from 'react';
 import { useCart } from '../Components/CartContext';
 import CartItem from '../Components/CartItem';
-import Footer from '../Components/Footer';
 import './CartPage.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -52,7 +51,6 @@ function CartPage() {
           </>
         )}
       </div>
-      <Footer />
     </>
   );
 }

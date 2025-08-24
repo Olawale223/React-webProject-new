@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import '../App.css'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
 import { useCart } from '../Components/CartContext';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 export default function Checkoutpage() {
+     const { cart } = useCart();
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -18,39 +19,71 @@ export default function Checkoutpage() {
         additionalInfo: "",
         paymentMethod: "", // Initialize paymentMethod to an empty string
     })
-    const { cart } = useCart();
+   
     const deliveryFee = 500;
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const grandTotal = total + deliveryFee;
 
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }))
-    }
+  useEffect(() => {
+    axios.get("http://localhost:5002/api/auth/login", {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    }).then(res => {
+      setFormData({
+        ...res.data, // e.g. { firstName, lastName, email, phone }
+        streetAddress: "",
+        townCity: "",
+        postcode: "",
+        additionalInfo: "",
+        paymentMethod: ""
+      });
+    }).catch(err => console.error(err));
+  }, []);
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
-    const handlePaystackPayment = () => {
-        if (!window.PaystackPop) {
-            alert('Paystack SDK not loaded');
-            return;
-        }
-        const handler = window.PaystackPop.setup({
-            key: 'pk_test_8a5c08278cf9d977df421fc71f85ac9f496a484f',
-            email: formData.email || 'chideraiwuchukwu@gmail.com',
-            amount: grandTotal * 100,
-            currency: 'NGN',
-            callback: function(response) {
-                alert('Payment complete! Reference: ' + response.reference);
-                // Optionally clear cart here
-            },
-            onClose: function() {
-                alert('Transaction was not completed.');
-            }
+const handlePaystackPayment = () => {
+  if (!window.PaystackPop) {
+    alert('Paystack SDK not loaded');
+    return;
+  }
+
+  const handler = window.PaystackPop.setup({
+    key: 'pk_test_8a5c08278cf9d977df421fc71f85ac9f496a484f', // public key
+    email: formData.email || 'customer@email.com',
+    amount: grandTotal * 100, // amount in kobo
+    currency: 'NGN',
+    callback: async function (response) {
+      console.log("Frontend reference:", response.reference);
+
+      try {
+        // ✅ Send reference to backend for verification
+        const res = await axios.post("http://localhost:5002/api/payment/paymentRoute", {
+          reference: response.reference, // must be lowercase
         });
-        handler.openIframe();
-    };
+
+        console.log("Backend response:", res.data);
+
+        if (res.data.status === "success") {
+          alert("✅ Payment verified successfully!");
+          // clear cart, redirect, or save order in DB here
+        } else {
+          alert("❌ Verification failed: " + res.data.message);
+        }
+      } catch (err) {
+        console.error("Error verifying payment:", err);
+        alert("⚠️ Error verifying payment");
+      }
+    },
+    onClose: function () {
+      alert('Transaction was not completed.');
+    }
+  });
+
+  handler.openIframe();
+};
 
     return (
         <>
@@ -263,7 +296,6 @@ export default function Checkoutpage() {
                     </button>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

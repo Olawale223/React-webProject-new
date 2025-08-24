@@ -15,6 +15,7 @@ import FoodCourt from "./Components/FoodCourt";
 import CartPage from "./Pages/CartPage";
 import { CartProvider } from './Components/CartContext';
 import { ToastContainer } from 'react-toastify';
+import Footer from "./Components/Footer";
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
         </Route>
       </Routes>
+      <Footer/>
     </CartProvider>
   );
 }

@@ -1,6 +1,4 @@
 import React from 'react'
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
 import Product from '../Components/Product';
 import  '../App.css';
 import Floatingimage from '../Components/Minor Components/Floatingimage';
@@ -19,7 +17,6 @@ export default function Productpage() {
     <h2> on Instagram.</h2>
     <Floatingimage/>
 </div>
-<Footer/>
 </>
   )
 }

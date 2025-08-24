@@ -2,8 +2,6 @@ import React from 'react';
 import '../App.css';
 import '../Pages/PageStyles.css';
 import '../Pages/Careerspage.css';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
 import chef from '../Assets/FoodCourt/chef.jpg';
 import boss from '../Assets/FoodCourt/boss.jpg';
 import rider from '../Assets/FoodCourt/rider.jpg';
@@ -118,7 +116,6 @@ const CareerPage = () => {
         </section>
         <FormComponent />
       </main>
-      <Footer />
     </>
   );
 };
