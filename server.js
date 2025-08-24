@@ -8,23 +8,23 @@ import { connectDB } from "./lib/db.js";
 
 dotenv.config();
 const app = express();
-// const cors = require('cors'); 
-
 const PORT = process.env.PORT || 5000;
-
-app.use(express.json()); // to get json data from body of the request
-app.use(cookieParser());
-
-app.use("/api/auth", authRoutes);
-app.use("/api/payment", paymentRoutes);
-app.listen(PORT, () => {
-  console.log("Server is running on  http://localhost:" + PORT);
-  connectDB();
-});
 
 app.use(
   cors({
-    origin: "http://localhost:5174", // Your frontend URL
+    origin: "http://localhost:3000", // your frontend URL (React or Vite dev server)
     credentials: true,
   })
 );
+
+app.use(express.json());
+app.use(cookieParser());
+
+app.use("/api/auth", authRoutes);
+app.use("/api/user", authRoutes);
+app.use("/api/payment", paymentRoutes);
+
+app.listen(PORT, () => {
+  console.log("Server is running on http://localhost:" + PORT);
+  connectDB();
+});
