@@ -9,16 +9,17 @@ import pd4 from '../Assets/FoodCourt/pd4.png'
 import pd5 from '../Assets/FoodCourt/pd5.png'
 import pd6 from '../Assets/FoodCourt/pd6.png'
 import pd7 from '../Assets/FoodCourt/pd7.jpeg'
-import { useNavigate } from 'react-router-dom';
+import { useCart } from './CartContext';
 
 
 
 
 
 
- function Product() {
-  const navigate = useNavigate()
+ function Product({}) {
   const images = [pd1,pd2,pd3,pd4,pd5,pd6,pd7];
+
+  const { addToCart } = useCart();
     
 
     return (
@@ -28,13 +29,16 @@ import { useNavigate } from 'react-router-dom';
             key={index}
             image={images[index]}
             textHead={content.textHead}
-            tectBody={content.textBody}
+            textBody={content.textBody}
             textFoot={content.textFoot}
-            onClick={
-              () => {
-                navigate('/checkout')
-              }
-            }
+             onAddToCart={() =>
+            addToCart({
+              id: index + 1,
+              image: images[index],
+              textHead: content.textHead,
+              textFoot: content.textFoot,
+              price: 2000, // Example price
+            })}
           />
         ))}
       </Layoutone>

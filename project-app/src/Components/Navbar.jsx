@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import fc2 from '../Assets/FoodCourt/fc2.png';
 import user from '../Assets/FoodCourt/user.svg';
 import { Link } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { useCart } from './CartContext';
 
 export default function Navbar() {
@@ -35,53 +33,76 @@ export default function Navbar() {
         {/* Logo */}
         <div className="logo">
           <Link to="/" style={{ textDecoration: 'none' }}>
-            {/* <img src={fc2} alt="Logo" /> */}
-            <h1 style={{fontSize:28}}>FOODCOURT</h1>
+            <h1 style={{ fontSize: 28 }}>FOODCOURT</h1>
           </Link>
         </div>
-        {/* Hamburger icon (FaBars) */}
-        <button
-          className={`hamburger-btn${menuOpen ? ' open' : ''}`}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          onClick={e => {
-            e.stopPropagation();
-            setMenuOpen(open => !open);
-          }}
-          type="button"
-        >
-          <FaBars size={28} color="#fff" />
-        </button>
-        {/* Menu links */}
+
+        {/* Bottom row: Hamburger + Icons */}
+        <div className="nav-bottom">
+          {/* Hamburger */}
+          {!menuOpen && (
+            <button
+              className="hamburger-btn"
+              aria-label="Open menu"
+              onClick={e => {
+                e.stopPropagation();
+                setMenuOpen(true);
+              }}
+              type="button"
+            >
+              <FaBars size={28} color="#fff" />
+            </button>
+          )}
+
+          {/* Icons */}
+          <div className="icons">
+            <Link
+              to="/cart"
+              style={{
+                textDecoration: 'none',
+                marginRight: '1.2rem',
+                position: 'relative'
+              }}
+            >
+              <FaShoppingCart style={{ fontSize: 22, color: '#ffffffff' }} />
+              <CartCountBadge count={cart.length} />
+            </Link>
+            <Link to="/access">
+              <img src={user} alt="User Icon" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Menu */}
         <div
           className={`menu${menuOpen ? ' show' : ''}`}
           onClick={e => e.stopPropagation()}
           style={{ pointerEvents: 'auto' }}
         >
+          {menuOpen && (
+            <button
+              className="close-btn"
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+              type="button"
+            >
+              <FaTimes size={28} color="#fff" />
+            </button>
+          )}
+
           <ul className="list-item">
-            <li><Link to="/about" style={{ textDecoration: 'none' }}>AboutFC</Link></li>
-            <li><Link to="/resturant" style={{ textDecoration: 'none' }}>Restaurant</Link></li>
-            <li><Link to="/careers" style={{ textDecoration: 'none' }}>Careers</Link></li>
-            <li><Link to="/faqs" style={{ textDecoration: 'none' }}>FAQs</Link></li>
+            <li><Link to="/about">AboutFC</Link></li>
+            <li><Link to="/resturant">Restaurant</Link></li>
+            <li><Link to="/careers">Careers</Link></li>
+            <li><Link to="/faqs">FAQs</Link></li>
           </ul>
-        </div>
-        {/* User icon */}
-        <div className="icons">
-          <Link to="/cart" style={{ textDecoration: 'none', marginRight: '1.2rem', position: 'relative' }}>
-            <FaShoppingCart style={{ fontSize: 22, color: '#ffffffff' }} />
-            {/* Cart count badge */}
-            <CartCountBadge count={cart.length} />
-          </Link>
-          <Link to="/access" style={{ textDecoration: 'none' }}>
-            <img src={user} alt="User Icon" />
-          </Link>
         </div>
       </div>
     </nav>
   );
 }
 
-// CartCountBadge component
+// Cart count badge
 function CartCountBadge({ count }) {
   if (!count) return null;
   return (

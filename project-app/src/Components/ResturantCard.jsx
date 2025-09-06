@@ -1,4 +1,3 @@
-import React from 'react'
 import Layoutone from '../Layout/Layoutone'
 import image1 from '../Assets/FoodCourt/image1.jpeg';
 import image3 from '../Assets/FoodCourt/image3.jpeg';
@@ -12,11 +11,9 @@ import image11 from '../Assets/FoodCourt/image11.jpg';
 import textContent from './Constants.jsx';
 import CardComponent from './Minor Components/CardComponent'
 import { useNavigate } from 'react-router-dom';
-import { useCart } from './CartContext';
 
 function ResturantCard() {
   const navigate = useNavigate();
-  const { addToCart } = useCart();
   const images = [image1, image2, image3, image7, image5, image6, image8, image9, image11];
 
   return (
@@ -28,13 +25,7 @@ function ResturantCard() {
           textHead={content.textHead}
           textFoot={content.textFoot}
           onClick={() => navigate('/product')}
-          onAddToCart={() => addToCart({
-            id: index + 1,
-            image: images[index],
-            textHead: content.textHead,
-            textFoot: content.textFoot,
-            price: 2000 // Example price, adjust as needed
-          })}
+          
         />
       ))}
     </Layoutone>
