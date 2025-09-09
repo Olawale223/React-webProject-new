@@ -25,7 +25,7 @@ export default function Checkoutpage() {
   const grandTotal = total + deliveryFee;
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/user/user", {
+    axios.get("https://react-webproject-backend.onrender.com/api/user/user", {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       withCredentials: true
     })
@@ -60,7 +60,7 @@ export default function Checkoutpage() {
     text: "Pay Now",
     onSuccess: async (response) => {
       try {
-        const res = await axios.post("http://localhost:5000/api/payment", {
+        const res = await axios.post("https://react-webproject-backend.onrender.com/api/payment", {
           reference: response.reference,
           customer: formData,
           cart
