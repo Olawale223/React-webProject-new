@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Order from '../models/order.model.js';
+import Order from '../models/Order.model.js';
 
 export const payment = async (req, res) => {
   const { reference, customer, cart } = req.body;
