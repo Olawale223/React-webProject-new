@@ -10,33 +10,33 @@ import Checkoutpage from "./Pages/Checkoutpage";
 import Productpage from "./Pages/Productpage";
 import Resturantpage from "./Pages/Resturantpage";
 import 'react-toastify/dist/ReactToastify.css';
-import Navbar from './Components/Navbar';
-import FoodCourt from "./Components/FoodCourt";
-import CartPage from "./Pages/CartPage";
 import { CartProvider } from './Components/CartContext';
 import { ToastContainer } from 'react-toastify';
-import Footer from "./Components/Footer";
+import CartPage from "./Pages/CartPage";
+import AntiNavLayout from "../src/Layout/AntiNavLayout";
 
 function App() {
-
   return (
     <CartProvider>
-      <Navbar />
       <ToastContainer />
       <Routes>
+        {/* Access page without Navbar and Footer */}
         <Route path="/access" element={<AccessPage />} />
-        <Route element={<Auth />}>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/resturant" element={<Resturantpage />} />
-          <Route path="/about" element={<Aboutpage />} />
-          <Route path="/careers" element={<Careerspage />} />
-          <Route path="/checkout" element={<Checkoutpage />} />
-          <Route path="/product" element={<Productpage/>} />
-          <Route path="/faqs" element={<FAQs />} />
-          <Route path="/cart" element={<CartPage />} />
+
+        {/* All other pages inside Layout (with Navbar & Footer) */}
+        <Route element={<AntiNavLayout />}>
+          <Route element={<Auth />}>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/resturant" element={<Resturantpage />} />
+            <Route path="/about" element={<Aboutpage />} />
+            <Route path="/careers" element={<Careerspage />} />
+            <Route path="/checkout" element={<Checkoutpage />} />
+            <Route path="/product" element={<Productpage />} />
+            <Route path="/faqs" element={<FAQs />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Route>
         </Route>
       </Routes>
-      <Footer/>
     </CartProvider>
   );
 }

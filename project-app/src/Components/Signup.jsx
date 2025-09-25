@@ -2,66 +2,69 @@ import React, { useState } from "react";
 import "./Minor Components/Input.css";
 import Input from "./Minor Components/Input";
 import Button from "./Minor Components/Button";
-import { ToastContainer, toast } from 'react-toastify';
-import { mainAPI } from "../Auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 function Signup({ onSwitchToLogin }) {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
-  function handleUsername(user) {
-    setUsername(user);
+  function handleEmail(userEmail) {
+    setEmail(userEmail);
+  }
+  function handleName(user) {
+    setName(user);
   }
 
   function handlePassword(pass) {
     setPassword(pass);
   }
 
-  function notify(param) {
-    toast(param);
+  function notify(message, type = "info") {
+    if (type === "success") toast.success(message);
+    else if (type === "error") toast.error(message);
+    else toast(message);
   }
 
   async function submit(event) {
     event.preventDefault();
-    const data = JSON.stringify({ email: username, password: password });
-    localStorage.setItem("user", username);
-    localStorage.setItem("pass", password);
-
-    // const url = "http://102.37.214.37:5001/api/v1/auth/";
-
-    // const config = {
-    //   method: "post",
-    //   maxBodyLength: Infinity,
-    //   url: url,
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   data: data,
-    // };
-
-    // www.facebook.com/account/12332
-
-    // baseURL = "www.facebook.com"
-    // entryPoint = "/account/12332/posts"
-    // apiEndpoint = baseURL + entryPoint
 
     try {
-      // const response = await mainAPI.post('api/v1/auth/signin', { data });
-      // console.log(response.data);
-      notify("Sign Up Successful!")
-    } catch (error) {
-      notify("Sign Up Failed!")
-      // console.error(error);
+      const res = await axios.post(
+        "http://localhost:5000/api/auth/signup",
+        {
+          name,
+          email,
+          password,
+        }
+      );
+
+      if (res.data?.token) {
+        localStorage.setItem("token", res.data.token);
+        notify("✅ Signup successful! You can now log in.", "success");
+        onSwitchToLogin(); // switch to login page
+      } else {
+        notify(res.data.message || "⚠️ Signup failed!", "error");
+      }
+    } catch (err) {
+      console.error("Signup error:", err.response?.data || err.message);
+      notify(
+        err.response?.data?.message || "❌ Something went wrong. Try again.",
+        "error"
+      );
     }
   }
 
   return (
     <div className="login-layout-cont">
       <div className="Login-container">
-        <form className="login-form">
-          <Input Title="Username" Type="text" handleChange={handleUsername} />
+        <form className="login-form" onSubmit={submit}>
+          <Input Title="name" Type="text" handleChange={handleName} />
+          <Input Title="Email" Type="text" handleChange={handleEmail} />
           <Input Title="Password" Type="password" handleChange={handlePassword} />
-          <Button Title="Signup" Type="button" onClick={submit} />
+          <Button Title="Signup" Type="submit" />
           <li
             onClick={onSwitchToLogin}
             style={{ textDecoration: "none", cursor: "pointer" }}
@@ -77,3 +80,4 @@ function Signup({ onSwitchToLogin }) {
 }
 
 export default Signup;
+

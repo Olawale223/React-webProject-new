@@ -72,7 +72,6 @@ export default function Checkoutpage() {
         }
       } catch (err) {
         console.error("Error verifying payment:", err);
-        alert("⚠️ Error verifying payment");
       }
     },
     onClose: () => alert("Transaction was not completed."),
@@ -86,7 +85,7 @@ export default function Checkoutpage() {
           e.preventDefault();
           console.log("Form submitted:", formData);
         }}>
-          {/* 🔹 Your billing form stays exactly the same */}
+          
           <div className="name-row">
             <div className="form-group">
               <input
@@ -284,7 +283,7 @@ export default function Checkoutpage() {
           </div>
         </div>
 
-        {/* 🔹 Paystack button styled like your existing button */}
+        
         <PaystackButton {...componentProps} className="submit-button" />
       </div>
     </div>

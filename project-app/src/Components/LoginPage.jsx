@@ -35,13 +35,13 @@ function LoginPage({ onSwitchToSignup }) {
     event.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.get("http://localhost:5000/api/auth/login", {
         email,
         password,
       });
 
       if (res.data?.token) {
-        // Save token for later authenticated requests
+        
         localStorage.setItem("token", res.data.token);
 
         showTrue();
